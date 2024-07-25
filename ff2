@@ -1,0 +1,109 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "NewEraHUB |FF2",IntroText = "NewEraHUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local tab = Window:MakeTab({
+    Name = "Player",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local pl = game.Players.LocalPlayer
+local char = pl.Character
+local humanoid = char:WaitForChild("Humanoid")
+
+local table = {
+    speed = 0
+}
+
+tab:AddSlider({
+    Name = "Walk speed",
+    Min = 20,
+    Max = 23,
+    Default = 20,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "Walk speed",
+    Callback = function(Value)
+            table.speed = Value
+    end    
+})
+
+
+local on = false
+
+tab:AddButton({
+    Name = "Change walk speed",
+    Callback = function(bool)
+            while  Wait() do
+                humanoid.WalkSpeed = table.speed
+            end
+    end
+
+})
+
+
+tab:AddSlider({
+Name = "JumpPower",
+Min = 50,
+Max = 60,
+Default =  50,
+Color = Color3.fromRGB(255,255,255),
+Increment = 1,
+ValueName = "JumpPower",
+Callback = function(Value)
+    table.Jump = Value
+end    
+})
+
+
+local on = false
+
+tab:AddButton({
+Name = "Change Jump Power",
+Callback = function(bool)
+    while  Wait() do
+        humanoid.JumpPower = table.Jump
+    end
+end
+
+})
+
+        local tab = Window:MakeTab({
+            Name = "Mags",
+            Icon = "rbxassetid://4483345998",
+            PremiumOnly = false
+        })
+
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+
+local LocalPlayer = Players.LocalPlayer
+local Character = LocalPlayer.Character
+local HumanoidRootPart = Character.HumanoidRootPart
+
+local MagnetismRange = 0.5 
+
+        tab:AddSlider({
+            Name = "Magnets",
+            Min = 0,
+            Max = 1000,
+            Default = 0,
+            Color = Color3.fromRGB(255,255,255),
+            Increment = 1,
+            ValueName = "Mags",
+            Callback = function(Value)
+                    table.MagnetismRange = Value
+            end    
+        })
+
+local on = false
+
+tab:AddButton({
+Name = "Enable Magnets",
+Callback = function(bool)
+    while  Wait() do
+        humanoid.JumpPower = table.Jump
+    end
+end
+
+})
