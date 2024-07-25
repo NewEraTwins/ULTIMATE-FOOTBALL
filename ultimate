@@ -43,13 +43,13 @@ tab:AddButton({
 
 
 tab:AddSlider({
-Name = "Jump Power",
+Name = "Dive Power",
 Min = 0,
 Max = 200,
 Default =  50,
 Color = Color3.fromRGB(255,255,255),
 Increment = 1,
-ValueName = "Jump Power",
+ValueName = "Dive Power",
 Callback = function(Value)
     table.Jump = Value
 end    
@@ -59,7 +59,7 @@ end
 local on = false
 
 tab:AddButton({
-Name = "Change Jump Power",
+Name = "Change Dive Power",
 Callback = function(bool)
     while  Wait() do
         humanoid.JumpPower = table.Jump
